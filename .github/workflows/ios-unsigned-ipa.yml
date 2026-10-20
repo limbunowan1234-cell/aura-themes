@@ -1,0 +1,76 @@
+name: iOS unsigned IPA (for Sideloadly)
+
+# Builds a Release .ipa WITHOUT code signing on GitHub's macOS runners.
+# Sideloadly signs it on your PC with your free Apple ID and installs it on your iPhone.
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths-ignore: ['**.md', 'tools/**']
+
+concurrency:
+  group: ios-ipa-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  build:
+    runs-on: macos-latest
+    timeout-minutes: 60
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Use latest stable Xcode
+        uses: maxim-lobanov/setup-xcode@v1
+        with:
+          xcode-version: latest-stable
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+
+      - name: Install JS dependencies
+        run: npm ci
+
+      - name: Type check and tests
+        run: |
+          npx tsc --noEmit
+          npx jest --ci
+
+      - name: Generate native iOS project
+        run: npx expo prebuild --platform ios --clean --no-install
+
+      - name: Install CocoaPods
+        working-directory: ios
+        run: pod install
+
+      - name: Build Release app (no signing)
+        run: |
+          WS=$(ls ios | grep -m1 '\.xcworkspace$')
+          SCHEME="${WS%.xcworkspace}"
+          echo "Workspace: $WS  Scheme: $SCHEME"
+          set -o pipefail
+          xcodebuild \
+            -workspace "ios/$WS" \
+            -scheme "$SCHEME" \
+            -configuration Release \
+            -sdk iphoneos \
+            -destination 'generic/platform=iOS' \
+            -derivedDataPath build \
+            CODE_SIGNING_ALLOWED=NO CODE_SIGNING_REQUIRED=NO CODE_SIGN_IDENTITY="" \
+            build | tail -n 80
+
+      - name: Package .ipa
+        run: |
+          APP=$(find build/Build/Products/Release-iphoneos -maxdepth 1 -name '*.app' | head -n1)
+          test -d "$APP"
+          mkdir -p out/Payload
+          cp -R "$APP" out/Payload/
+          cd out && zip -qry AuraThemes-unsigned.ipa Payload
+          ls -lh AuraThemes-unsigned.ipa
+
+      - uses: actions/upload-artifact@v4
+        with:
+          name: AuraThemes-unsigned-ipa
+          path: out/AuraThemes-unsigned.ipa
+          retention-days: 14

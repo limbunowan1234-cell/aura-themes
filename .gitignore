@@ -39,3 +39,11 @@ yarn-error.*
 # generated native folders
 /ios
 /android
+
+# Aura
+dist-web/
+build/
+out/
+tools/gen/out/
+__pycache__/
+/android

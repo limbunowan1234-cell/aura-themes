@@ -1,25 +1,61 @@
 {
   "expo": {
-    "name": "aura-themes",
+    "name": "Aura Themes",
     "slug": "aura-themes",
     "version": "1.0.0",
     "orientation": "portrait",
-    "icon": "./assets/icon.png",
-    "userInterfaceStyle": "light",
+    "icon": "./assets/brand/icon.png",
+    "scheme": "aura",
+    "userInterfaceStyle": "dark",
+    "backgroundColor": "#08080a",
     "ios": {
-      "supportsTablet": true
+      "supportsTablet": false,
+      "bundleIdentifier": "com.darjeelingwebstudio.aura",
+      "buildNumber": "1",
+      "infoPlist": {
+        "NSPhotoLibraryAddUsageDescription": "Aura saves wallpapers and icons you choose to your Photos so you can set them as your wallpaper or home-screen icons.",
+        "LSApplicationQueriesSchemes": ["shortcuts"],
+        "ITSAppUsesNonExemptEncryption": false
+      }
     },
     "android": {
+      "package": "com.darjeelingwebstudio.aura",
       "adaptiveIcon": {
-        "backgroundColor": "#E6F4FE",
-        "foregroundImage": "./assets/android-icon-foreground.png",
-        "backgroundImage": "./assets/android-icon-background.png",
-        "monochromeImage": "./assets/android-icon-monochrome.png"
-      },
-      "predictiveBackGestureEnabled": false
+        "backgroundColor": "#08080a",
+        "foregroundImage": "./assets/brand/icon.png"
+      }
     },
     "web": {
-      "favicon": "./assets/favicon.png"
+      "favicon": "./assets/brand/icon.png",
+      "bundler": "metro",
+      "output": "single"
+    },
+    "plugins": [
+      "expo-router",
+      "expo-image",
+      "expo-sharing",
+      "expo-asset",
+      "expo-font",
+      [
+        "expo-splash-screen",
+        {
+          "image": "./assets/brand/splash.png",
+          "imageWidth": 160,
+          "resizeMode": "contain",
+          "backgroundColor": "#08080a"
+        }
+      ],
+      [
+        "expo-media-library",
+        {
+          "photosPermission": "Aura only needs to add images to your Photos.",
+          "savePhotosPermission": "Aura saves wallpapers and icons you choose to your Photos so you can set them as your wallpaper or home-screen icons.",
+          "isAccessMediaLocationEnabled": false
+        }
+      ]
+    ],
+    "experiments": {
+      "typedRoutes": false
     }
   }
 }

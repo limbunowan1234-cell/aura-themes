@@ -1,0 +1,353 @@
+[
+  {
+    "id": "midnight-luxury",
+    "name": "Midnight Luxury",
+    "tagline": "Black marble, gold detailing",
+    "homeWallpaper": "nero-marquina",
+    "lockWallpaper": "gilded-lines",
+    "palette": [
+      "#0d0d0f",
+      "#1a1a1f",
+      "#d4af37",
+      "#f5f5f5"
+    ],
+    "accent": "#d4af37",
+    "icon": {
+      "bg": [
+        "#17171b",
+        "#060607"
+      ],
+      "glyph": "#d4af37",
+      "outline": true
+    },
+    "mood": [
+      "dark",
+      "luxury",
+      "gold"
+    ]
+  },
+  {
+    "id": "purple-dream",
+    "name": "Purple Dream",
+    "tagline": "Deep violet with a neon glow",
+    "homeWallpaper": "ultraviolet",
+    "lockWallpaper": "violet-orb",
+    "palette": [
+      "#0b0420",
+      "#3a0ca3",
+      "#7209b7",
+      "#f72585"
+    ],
+    "accent": "#b388ff",
+    "icon": {
+      "bg": [
+        "#7209b7",
+        "#2a0f5c"
+      ],
+      "glyph": "#ffffff",
+      "outline": false
+    },
+    "mood": [
+      "dark",
+      "violet",
+      "neon"
+    ]
+  },
+  {
+    "id": "minimal-white",
+    "name": "Minimal White",
+    "tagline": "Quiet stones, soft neutrals",
+    "homeWallpaper": "pebbles",
+    "lockWallpaper": "two-circles",
+    "palette": [
+      "#f5f3ef",
+      "#e7e4df",
+      "#8d877d",
+      "#2b2b2b"
+    ],
+    "accent": "#8d877d",
+    "icon": {
+      "bg": [
+        "#fbfaf7",
+        "#ebe8e2"
+      ],
+      "glyph": "#2b2b2b",
+      "outline": true
+    },
+    "mood": [
+      "light",
+      "minimal",
+      "neutral"
+    ]
+  },
+  {
+    "id": "dark-galaxy",
+    "name": "Dark Galaxy",
+    "tagline": "Nebula clouds and starlight",
+    "homeWallpaper": "violet-nebula",
+    "lockWallpaper": "deep-field",
+    "palette": [
+      "#05030f",
+      "#1b1240",
+      "#7b2ff7",
+      "#f107a3"
+    ],
+    "accent": "#b9a8ff",
+    "icon": {
+      "bg": [
+        "#1b1240",
+        "#05030f"
+      ],
+      "glyph": "#b9a8ff",
+      "outline": false
+    },
+    "mood": [
+      "dark",
+      "space",
+      "violet"
+    ]
+  },
+  {
+    "id": "ocean-blue",
+    "name": "Ocean Blue",
+    "tagline": "Tropical water, clear skies",
+    "homeWallpaper": "tropic-noon",
+    "lockWallpaper": "blueprint-swirl",
+    "palette": [
+      "#023e8a",
+      "#0077b6",
+      "#00b4d8",
+      "#e8fbff"
+    ],
+    "accent": "#48cae4",
+    "icon": {
+      "bg": [
+        "#00b4d8",
+        "#0077b6"
+      ],
+      "glyph": "#ffffff",
+      "outline": false
+    },
+    "mood": [
+      "light",
+      "blue",
+      "summer"
+    ]
+  },
+  {
+    "id": "retro-future",
+    "name": "Retro Future",
+    "tagline": "Synthwave sunsets and neon grids",
+    "homeWallpaper": "outrun",
+    "lockWallpaper": "miami-grid",
+    "palette": [
+      "#0d0221",
+      "#2b0b5e",
+      "#ff2a6d",
+      "#05d9e8"
+    ],
+    "accent": "#ff2a6d",
+    "icon": {
+      "bg": [
+        "#2b0b5e",
+        "#0d0221"
+      ],
+      "glyph": "#05d9e8",
+      "outline": false
+    },
+    "mood": [
+      "dark",
+      "retro",
+      "neon"
+    ]
+  },
+  {
+    "id": "soft-pastel",
+    "name": "Soft Pastel",
+    "tagline": "Lilac skies and little sparkles",
+    "homeWallpaper": "sugar-sparkle",
+    "lockWallpaper": "cloud-nine",
+    "palette": [
+      "#ffd6ff",
+      "#e7c6ff",
+      "#c8b6ff",
+      "#bde0fe"
+    ],
+    "accent": "#c8b6ff",
+    "icon": {
+      "bg": [
+        "#ffd6ff",
+        "#c8b6ff"
+      ],
+      "glyph": "#7b5ea7",
+      "outline": false
+    },
+    "mood": [
+      "light",
+      "pastel",
+      "cute"
+    ]
+  },
+  {
+    "id": "mountain-escape",
+    "name": "Mountain Escape",
+    "tagline": "Himalayan dawn to moonlit ridges",
+    "homeWallpaper": "himalayan-dawn",
+    "lockWallpaper": "moonlit-range",
+    "palette": [
+      "#2b2d6e",
+      "#c06c84",
+      "#f8b195",
+      "#2a1e3f"
+    ],
+    "accent": "#f8b195",
+    "icon": {
+      "bg": [
+        "#c06c84",
+        "#2a1e3f"
+      ],
+      "glyph": "#ffe5b4",
+      "outline": false
+    },
+    "mood": [
+      "dark",
+      "nature",
+      "warm"
+    ]
+  },
+  {
+    "id": "neon-night",
+    "name": "Neon Night",
+    "tagline": "True black with electric light",
+    "homeWallpaper": "neon-wave",
+    "lockWallpaper": "cyan-halo",
+    "palette": [
+      "#000000",
+      "#ff4081",
+      "#40c4ff",
+      "#18ffff"
+    ],
+    "accent": "#ff4081",
+    "icon": {
+      "bg": [
+        "#0a0a0a",
+        "#000000"
+      ],
+      "glyph": "#ff4081",
+      "outline": true
+    },
+    "mood": [
+      "dark",
+      "amoled",
+      "neon"
+    ]
+  },
+  {
+    "id": "monochrome",
+    "name": "Monochrome",
+    "tagline": "Greyscale calm, one fine line",
+    "homeWallpaper": "misty-monochrome",
+    "lockWallpaper": "single-line",
+    "palette": [
+      "#0e0e10",
+      "#2a2a2a",
+      "#c4c4c4",
+      "#f3f1ea"
+    ],
+    "accent": "#c4c4c4",
+    "icon": {
+      "bg": [
+        "#2a2a2a",
+        "#111111"
+      ],
+      "glyph": "#f3f1ea",
+      "outline": true
+    },
+    "mood": [
+      "dark",
+      "minimal",
+      "mono"
+    ]
+  },
+  {
+    "id": "autumn-aesthetic",
+    "name": "Autumn Aesthetic",
+    "tagline": "Harvest moon and amber glow",
+    "homeWallpaper": "harvest-moon",
+    "lockWallpaper": "autumn-glow",
+    "palette": [
+      "#120b1f",
+      "#7a2e0e",
+      "#d35400",
+      "#ffe8cc"
+    ],
+    "accent": "#e85d04",
+    "icon": {
+      "bg": [
+        "#d35400",
+        "#7a2e0e"
+      ],
+      "glyph": "#ffe8cc",
+      "outline": false
+    },
+    "mood": [
+      "dark",
+      "seasonal",
+      "warm"
+    ]
+  },
+  {
+    "id": "neon-circuit",
+    "name": "Neon Circuit",
+    "tagline": "Original cyberpunk-inspired iridescence",
+    "homeWallpaper": "oil-slick",
+    "lockWallpaper": "crimson-thread",
+    "palette": [
+      "#05040a",
+      "#24135f",
+      "#0e7c86",
+      "#fcee09"
+    ],
+    "accent": "#fcee09",
+    "icon": {
+      "bg": [
+        "#24135f",
+        "#05040a"
+      ],
+      "glyph": "#fcee09",
+      "outline": false
+    },
+    "mood": [
+      "dark",
+      "cyber",
+      "neon"
+    ]
+  },
+  {
+    "id": "tea-garden",
+    "name": "Tea Garden",
+    "tagline": "Misty hills, monsoon mornings",
+    "homeWallpaper": "tea-hills",
+    "lockWallpaper": "monsoon",
+    "palette": [
+      "#1f4d2b",
+      "#3f7d4f",
+      "#a3c9a8",
+      "#f6f7e8"
+    ],
+    "accent": "#7fb98a",
+    "icon": {
+      "bg": [
+        "#3f7d4f",
+        "#1f4d2b"
+      ],
+      "glyph": "#f6f7e8",
+      "outline": false
+    },
+    "mood": [
+      "light",
+      "nature",
+      "green"
+    ]
+  }
+]
