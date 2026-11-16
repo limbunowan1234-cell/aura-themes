@@ -81,7 +81,10 @@ export async function saveImageToPhotos(module: number, fileName: string): Promi
   }
 }
 
-export async function saveManyToPhotos(items: { module: number; fileName: string }[]): Promise<ActionResult & { count?: number }> {
+export async function saveManyToPhotos(
+  items: { module: number; fileName: string }[],
+  onProgress?: (done: number, total: number) => void,
+): Promise<ActionResult & { count?: number }> {
   if (Platform.OS !== 'web') {
     const perm = await ensurePhotosPermission();
     if (!perm.ok) return perm;
@@ -91,6 +94,7 @@ export async function saveManyToPhotos(items: { module: number; fileName: string
     const r = await saveImageToPhotos(it.module, it.fileName);
     if (!r.ok) return { ...r, count };
     count++;
+    onProgress?.(count, items.length);
   }
   return { ok: true, count };
 }

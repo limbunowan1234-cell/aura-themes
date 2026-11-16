@@ -1,7 +1,7 @@
 import { Image } from 'expo-image';
 import React, { useEffect, useState } from 'react';
 import { StyleSheet, Text, View } from 'react-native';
-import { ICON_IMAGES, ICON_SLOTS } from '../data/icons.generated';
+import { ICON_IMAGES, ICON_SLOTS, type IconVariant } from '../data/icons.generated';
 import type { ThemeCollection, Wallpaper } from '../data/types';
 import { WALLPAPER_RATIO } from '../theme/tokens';
 
@@ -17,11 +17,21 @@ function useNow() {
 const DOCK = ['phone', 'messages', 'browser', 'music'];
 
 /** Illustrative mock of a home screen — not a reproduction of the user's real iPhone. */
-export function HomePreview({ theme, wallpaper, width }: { theme: ThemeCollection; wallpaper: Wallpaper; width: number }) {
+export function HomePreview({
+  theme,
+  wallpaper,
+  width,
+  variant = 'signature',
+}: {
+  theme: ThemeCollection;
+  wallpaper: Wallpaper;
+  width: number;
+  variant?: IconVariant;
+}) {
   const now = useNow();
   const height = width * WALLPAPER_RATIO;
   const s = width / 300;
-  const icons = ICON_IMAGES[theme.id] ?? {};
+  const icons = ICON_IMAGES[theme.id]?.[variant] ?? {};
   const grid = ICON_SLOTS.map((x) => x.id).filter((id) => !DOCK.includes(id)).slice(0, 8);
   const iconSize = 50 * s;
   const time = now.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });

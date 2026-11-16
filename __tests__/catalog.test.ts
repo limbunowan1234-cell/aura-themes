@@ -1,7 +1,7 @@
 import fs from 'fs';
 import path from 'path';
 import { WALLPAPER_META } from '../src/data/wallpapers.generated';
-import { ICON_SLOTS } from '../src/data/icons.generated';
+import { ICON_GROUPS, ICON_SLOTS, ICON_VARIANTS } from '../src/data/icons.generated';
 import { CATEGORIES, getWallpaper, search, THEMES, WALLPAPERS } from '../src/data/catalog';
 import { resolveCollection } from '../src/data/collections';
 
@@ -40,10 +40,19 @@ describe('catalog integrity', () => {
     for (const t of THEMES) {
       expect(getWallpaper(t.homeWallpaper)).toBeDefined();
       expect(getWallpaper(t.lockWallpaper)).toBeDefined();
-      for (const s of ICON_SLOTS) {
-        expect(fs.existsSync(path.join(root, 'assets/icons', t.id, `${s.id}.png`))).toBe(true);
+      for (const v of ICON_VARIANTS) {
+        for (const s of ICON_SLOTS) {
+          expect(fs.existsSync(path.join(root, 'assets/icons', t.id, v.id, `${s.id}.jpg`))).toBe(true);
+        }
       }
     }
+  });
+
+  it('icon packs have 60+ unique slots in known groups', () => {
+    expect(ICON_SLOTS.length).toBeGreaterThanOrEqual(60);
+    expect(new Set(ICON_SLOTS.map((s) => s.id)).size).toBe(ICON_SLOTS.length);
+    const groups = new Set(ICON_GROUPS.map((g) => g.id));
+    for (const s of ICON_SLOTS) expect(groups.has(s.group)).toBe(true);
   });
 
   it('collections used by See All resolve', () => {

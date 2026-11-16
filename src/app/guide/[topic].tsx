@@ -30,7 +30,7 @@ const GUIDES: Record<string, { title: string; subtitle: string; intro?: string; 
     intro:
       'iOS doesn’t allow any app to swap your app icons automatically. The supported way is a Shortcuts bookmark: it shows your custom icon on the Home Screen and opens the real app when tapped.',
     steps: [
-      { title: 'Save the icons', body: 'In a theme, tap “Save all icons”. They land in your Photos.' },
+      { title: 'Save the icons', body: 'Open a theme’s install kit, pick an icon style (Signature, Light, Dark or Tinted) and save a set. They land in your Photos.' },
       { title: 'New shortcut', body: 'Open Shortcuts, tap +, add the action “Open App” and pick the app (for example, Messages).' },
       { title: 'Add to Home Screen', body: 'Tap the share/settings menu at the top, choose “Add to Home Screen”.' },
       { title: 'Choose your icon', body: 'Tap the small icon, choose “Choose Photo”, select the matching Aura icon and type the app name.' },
